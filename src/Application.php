@@ -26,7 +26,7 @@ class Application extends BaseApplication
     {
         $sfRequest = $this->buildSymfonyRequest($request, $response);
 
-        $result = $this->handle($sfRequest, HttpKernelInterface::MASTER_REQUEST, false);
+        $result = $this->handle($sfRequest, HttpKernelInterface::MASTER_REQUEST, true);
 
         $response->writeHead($result->getStatusCode(), $result->headers->all());
         $response->end($result->getContent());
