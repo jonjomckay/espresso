@@ -5,10 +5,11 @@ namespace React\Espresso;
 use React\EventLoop\Factory;
 use React\Socket\Server as SocketServer;
 use React\Http\Server as HttpServer;
+use Silex\Application as SilexApplication;
 
 class Stack extends \Pimple
 {
-    public function __construct($app)
+    public function __construct(SilexApplication $app)
     {
         $this['loop'] = $this->share(function () {
             return Factory::create();
